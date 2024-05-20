@@ -1,0 +1,16 @@
+image: openjdk:19-jdk-alpine
+
+stages:
+  - build
+  - execute
+
+build:
+  stage: build
+  script: javac Hello.java
+  artifacts:
+    paths:
+     - Hello.*
+
+execute:
+  stage: execute
+  script: java Hello
